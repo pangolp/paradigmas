@@ -1,0 +1,37 @@
+| medicamento nombre obra plan vencimiento sigue farmacia direccion medicamentos resultado |
+
+nombre:=Prompter prompt:'Ingrese el nombre de la farmacia' default:'Farmacia Diagonal'.
+direccion:=Prompter prompt:'Ingrese la direccion de la farmacia' default:'60 n° 1320'.
+farmacia:=Farmacia crearFarmacia:nombre con:direccion.
+
+sigue:=MessageBox confirm:'Desea cargar medicamentos?'.
+[sigue] whileTrue:[
+    nombre:=Prompter prompt:'Ingrese el nombre de un medicamento' default:'Nombre'.
+    obra:=Prompter prompt:'Ingrese la obra social del medicamento' default:'Osecac'.
+    plan:=Prompter prompt:'Ingrese el plan del medicamento' default:'Materno Infantil'.
+    vencimiento:=(Prompter prompt:'Ingrese el vencimiento del medicamento' default:'10 27 2017') asDate.
+    medicamento:=Medicamento crearMedicamento:nombre con:obra con:plan con:vencimiento.
+
+    farmacia agregarMedicamento:medicamento.
+    sigue:=MessageBox confirm:'Desea cargar mas medicamentos?'.
+].
+
+medicamentos:=farmacia todosMedicamentos.
+
+obra:=Prompter prompt:'Ingrese la obra social a buscar' default:'Osecac'.
+plan:=Prompter prompt:'Ingrese el plan a buscar' default:'Materno Infantil'.
+
+resultado:=medicamentos select:[:unMedicamento| (unMedicamento verObraSocial = obra) & (unMedicamento verPlan = plan)].
+
+resultado do:[:unMedicamento |
+    (unMedicamento verNombre) printOn: Transcript.
+    Transcript cr.
+    (unMedicamento verObraSocial) printOn: Transcript.
+    Transcript cr.
+    (unMedicamento verPlan) printOn: Transcript.
+    Transcript cr.
+    (unMedicamento verVencimiento) printOn: Transcript.
+    Transcript cr cr.
+].
+
+
