@@ -33,5 +33,3 @@ resultado do:[:unMedicamento |
     (unMedicamento verVencimiento) printOn: Transcript.
     Transcript cr cr.
 ].
-
-

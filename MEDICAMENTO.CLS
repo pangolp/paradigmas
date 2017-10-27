@@ -1,16 +1,15 @@
-
 Object subclass: #Medicamento
   instanceVariableNames: 
     'nombre obra plan vencimiento '
   classVariableNames: ''
-  poolDictionaries: ''   !
+  poolDictionaries: ''   
 
 
 !Medicamento class methods !
  
 crearMedicamento:unNombre con:unaObra con:unPlan con:unVencimiento
 "Crea y retorna un medicamento con sus datos cargados"
-^(super new) inicializarMedicamento:unNombre con:unaObra con:unPlan con:unVencimiento! !
+^(super new) inicializarMedicamento:unNombre con:unaObra con:unPlan con:unVencimiento
 
 
 
@@ -21,36 +20,36 @@ inicializarMedicamento:unNombre con:unaObra con:unPlan con:unVencimiento
 nombre:=unNombre.
 obra:=unaObra.
 plan:=unPlan.
-vencimiento:=unVencimiento.!
+vencimiento:=unVencimiento.
  
 modificarNombre:otroNombre
 "Modificar el nombre del medicamento"
-nombre:=otroNombre.!
+nombre:=otroNombre.
  
 modificarObraSocial:otraObra
 "Modifica la obra social de un medicamento"
-obra:=otraObra.!
+obra:=otraObra.
  
 modificarPlan:otroPlan
 "Modifica el plan de un medicamento"
-plan:=otroPlan.!
+plan:=otroPlan.
   
 modificarVencimiento:otroVencimiento
 "Modifica el vencimiento de un medicamento"
-vencimiento:=otroVencimiento.!
+vencimiento:=otroVencimiento.
    
 verNombre
 "Retorna el nombre de un medicamento"
-^nombre!
+^nombre.
   
 verObraSocial
 "Retorna la obra social de un medicamento"
-^obra.!
+^obra.
   
 verPlan
 "Retorna el plan de un medicamento"
-^plan.!
+^plan.
    
 verVencimiento
 "Retorna el vencimiento de un medicamento"
-^vencimiento.! !
+^vencimiento.
